@@ -1,0 +1,24 @@
+{
+  "version": "trend_anchors_v1",
+  "description": "Research-only distance-to-band trends; reference bands, change/noise/gap/plausibility thresholds require clinical review. Not a validated clinical score. Audit variables never enter semantic loss.",
+  "min_gap_minutes": 15,
+  "min_severity_change": 0.25,
+  "min_pair_severity": 0.5,
+  "sources": {
+    "vitals": "https://www.rcp.ac.uk/media/eczf5mvm/news2-chart-3_news-observation-chart_2022_0_0.pdf",
+    "ph": "https://medlineplus.gov/lab-tests/arterial-blood-gas-abg-test/",
+    "potassium": "https://www.cdc.gov/nchs/data/nhanes/public/2021/labmethods/BIOPRO-L-MET-Potassium-508.pdf",
+    "lactate_context": "https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-guidelines-2021"
+  },
+  "variables": {
+    "HR": {"role":"train", "unit":"beats/min", "lower":51, "upper":90, "scale":20, "min_change":5, "max_gap_minutes":180, "plausible":[20,250]},
+    "SBP": {"role":"train", "unit":"mmHg", "lower":111, "upper":219, "scale":20, "min_change":10, "max_gap_minutes":180, "plausible":[30,300]},
+    "Temperature": {"role":"train", "unit":"C", "lower":36.1, "upper":38.0, "scale":1, "min_change":0.3, "max_gap_minutes":240, "plausible":[25,43]},
+    "pH Blood": {"role":"train", "unit":"pH", "lower":7.35, "upper":7.45, "scale":0.1, "min_change":0.03, "max_gap_minutes":360, "plausible":[6.5,8.0]},
+    "Potassium": {"role":"train", "unit":"mmol/L", "lower":3.5, "upper":5.1, "scale":1, "min_change":0.3, "max_gap_minutes":720, "plausible":[1.5,9]},
+    "Lactate": {"role":"audit", "unit":"mmol/L", "lower":null, "upper":2.0, "scale":2, "min_change":0.5, "max_gap_minutes":720, "plausible":[0.1,30]},
+    "RR": {"role":"audit", "unit":"breaths/min", "lower":12, "upper":20, "scale":5, "min_change":3, "max_gap_minutes":180, "plausible":[4,70]}
+  },
+  "excluded_from_training": ["medication doses", "GCS under possible sedation", "FiO2 without oxygenation/support context", "urine volume without weight/collection duration", "SpO2 without chronic respiratory disease and oxygen support context"],
+  "limitations": ["NEWS2-derived vital bands are proxy anchors, not proof of clinical recovery.", "Ventilator settings and perioperative cooling can confound RR/temperature trends.", "Within-band changes are unlabelled; only sufficiently abnormal pairs with clear changes are anchors.", "A decreasing abnormality proxy is not a causal protective effect or a diagnosis."]
+}

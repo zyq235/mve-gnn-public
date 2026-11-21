@@ -1,0 +1,20 @@
+{
+  "mimic3": {
+    "num_hidden": 256,
+    "num_layers": 2,
+    "mask_rate": 0.5,
+    "num_heads": 8,
+    "norm": "layernorm",
+    "loss_lmb": 1.0,
+    "mse_lmb": 0.5
+  },
+  "mimic4": {
+    "num_hidden": 256,
+    "num_layers": 2,
+    "mask_rate": 0.5,
+    "num_heads": 8,
+    "norm": "layernorm",
+    "loss_lmb": 1.0,
+    "mse_lmb": 0.5
+  }
+}

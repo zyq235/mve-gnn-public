@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+/.venv/
+/.pytest_cache/
+/data/*
+!/data/eicu/
+!/data/mimic-iv/
+!/data/mimic3/
+/data/*/*
+!/data/*/var2ind.json
+!/data/*/var_mean_std.json
+/checkpoints/
+/logs/
+/results/
+*.log

@@ -1,0 +1,758 @@
+{
+    "ALP": {
+        "mean": 146.74801832325343,
+        "std": 165.32471796778904,
+        "class": "Blood Chemistry",
+        "sub_class": "Hepatic Function Panel"
+    },
+    "ALT": {
+        "mean": 222.8393004612459,
+        "std": 720.4704388468353,
+        "class": "Blood Chemistry",
+        "sub_class": "Hepatic Function Panel"
+    },
+    "AST": {
+        "mean": 301.92701979890126,
+        "std": 1105.8826968858727,
+        "class": "Blood Chemistry",
+        "sub_class": "Hepatic Function Panel"
+    },
+    "Age": {
+        "mean": 65.0687186378047,
+        "std": 16.42049112683425,
+        "class": "Demographics & Status",
+        "sub_class": "Patient Demographics"
+    },
+    "Albumin": {
+        "mean": 2.91073229086559,
+        "std": 0.6423876870760525,
+        "class": "Blood Chemistry",
+        "sub_class": "Hepatic Function Panel"
+    },
+    "Albumin 25%": {
+        "mean": 70.54322097542499,
+        "std": 43.18896729565309,
+        "class": "Fluid Intake",
+        "sub_class": "Intravenous Colloids"
+    },
+    "Albumin 5%": {
+        "mean": 318.40061561549146,
+        "std": 125.97325339907314,
+        "class": "Fluid Intake",
+        "sub_class": "Intravenous Colloids"
+    },
+    "Amiodarone": {
+        "mean": 41.340708681036006,
+        "std": 28.03140851445536,
+        "class": "Medications",
+        "sub_class": "Antiarrhythmics"
+    },
+    "Anion Gap": {
+        "mean": 14.027588528550634,
+        "std": 4.330075948726725,
+        "class": "Blood Chemistry",
+        "sub_class": "Comprehensive Metabolic Panel"
+    },
+    "BUN": {
+        "mean": 32.49766988375535,
+        "std": 26.239944896052705,
+        "class": "Blood Chemistry",
+        "sub_class": "Comprehensive Metabolic Panel"
+    },
+    "Base Excess": {
+        "mean": -0.4036008111981166,
+        "std": 5.541490162290361,
+        "class": "Blood Gas & Respiratory",
+        "sub_class": "Blood Gas Analysis"
+    },
+    "Basophils": {
+        "mean": 0.2666033434650456,
+        "std": 0.3952861795623618,
+        "class": "Hematology & Coagulation",
+        "sub_class": "Complete Blood Count"
+    },
+    "Bicarbonate": {
+        "mean": 24.139480884489736,
+        "std": 5.292483641678955,
+        "class": "Blood Chemistry",
+        "sub_class": "Comprehensive Metabolic Panel"
+    },
+    "Bilirubin (Direct)": {
+        "mean": 4.602261777301927,
+        "std": 6.046352727983911,
+        "class": "Blood Chemistry",
+        "sub_class": "Hepatic Function Panel"
+    },
+    "Bilirubin (Indirect)": {
+        "mean": 1.9910922047702153,
+        "std": 2.4927965135213714,
+        "class": "Blood Chemistry",
+        "sub_class": "Hepatic Function Panel"
+    },
+    "Bilirubin (Total)": {
+        "mean": 3.5063456906482355,
+        "std": 6.661833542880807,
+        "class": "Blood Chemistry",
+        "sub_class": "Hepatic Function Panel"
+    },
+    "CRR": {
+        "mean": 0.0,
+        "std": 1.0,
+        "class": "Others",
+        "sub_class": "Clinical Interventions"
+    },
+    "Calcium Free": {
+        "mean": 1.1258646033842161,
+        "std": 0.11295038967019831,
+        "class": "Blood Chemistry",
+        "sub_class": "Comprehensive Metabolic Panel"
+    },
+    "Calcium Gluconate": {
+        "mean": 1.7592265706899197,
+        "std": 2.567729756540028,
+        "class": "Medications",
+        "sub_class": "Electrolyte Supplements"
+    },
+    "Calcium Total": {
+        "mean": 8.449021333089274,
+        "std": 0.8405790602473584,
+        "class": "Blood Chemistry",
+        "sub_class": "Comprehensive Metabolic Panel"
+    },
+    "Cefazolin": {
+        "mean": 1.0270488494146144,
+        "std": 0.16272603926138082,
+        "class": "Medications",
+        "sub_class": "Antibacterials"
+    },
+    "Chest Tube": {
+        "mean": 48.7603674472541,
+        "std": 134.11205083320726,
+        "class": "Fluid Output",
+        "sub_class": "Fluid Output"
+    },
+    "Chloride": {
+        "mean": 103.37420799535543,
+        "std": 7.079283676939514,
+        "class": "Blood Chemistry",
+        "sub_class": "Comprehensive Metabolic Panel"
+    },
+    "Colloid": {
+        "mean": 929.5380313199105,
+        "std": 1312.3189754509613,
+        "class": "Fluid Intake",
+        "sub_class": "Intravenous Colloids"
+    },
+    "Creatinine Blood": {
+        "mean": 1.5833185277351776,
+        "std": 1.5153592992767124,
+        "class": "Blood Chemistry",
+        "sub_class": "Comprehensive Metabolic Panel"
+    },
+    "Creatinine Urine": {
+        "mean": 83.15929203539822,
+        "std": 62.25016687979453,
+        "class": "Urine Analysis",
+        "sub_class": "Urinalysis"
+    },
+    "D5W": {
+        "mean": 30.179465624010774,
+        "std": 55.074690249465185,
+        "class": "Fluid Intake",
+        "sub_class": "Intravenous Crystalloids"
+    },
+    "DBP": {
+        "mean": 62.82040858863304,
+        "std": 15.14689152320209,
+        "class": "Vital Signs",
+        "sub_class": "Vital Signs"
+    },
+    "Dextrose Other": {
+        "mean": 67.03692294778854,
+        "std": 54.6786966323069,
+        "class": "Fluid Intake",
+        "sub_class": "Intravenous Crystalloids"
+    },
+    "Dopamine": {
+        "mean": 25.949064938422367,
+        "std": 23.482100126796468,
+        "class": "Medications",
+        "sub_class": "Vasoactive Agents"
+    },
+    "EBL": {
+        "mean": 504.76115367282557,
+        "std": 1041.220065786182,
+        "class": "Fluid Output",
+        "sub_class": "Fluid Output"
+    },
+    "Emesis": {
+        "mean": 145.28998867863496,
+        "std": 162.70958315970717,
+        "class": "Fluid Output",
+        "sub_class": "Fluid Output"
+    },
+    "Eoisinophils": {
+        "mean": 1.4216729991420518,
+        "std": 2.6546732012264225,
+        "class": "Hematology & Coagulation",
+        "sub_class": "Complete Blood Count"
+    },
+    "Epinephrine": {
+        "mean": 0.2720864790581316,
+        "std": 0.6349051825445807,
+        "class": "Medications",
+        "sub_class": "Vasoactive Agents"
+    },
+    "Famotidine": {
+        "mean": 1.0,
+        "std": 0.0,
+        "class": "Medications",
+        "sub_class": "Gastrointestinal Agents"
+    },
+    "Fentanyl": {
+        "mean": 0.0904798319025383,
+        "std": 0.07943361727197146,
+        "class": "Medications",
+        "sub_class": "Analgesics & Sedatives"
+    },
+    "FiO2": {
+        "mean": 0.4903307751781194,
+        "std": 0.17179029370632945,
+        "class": "Blood Gas & Respiratory",
+        "sub_class": "Blood Gas Analysis"
+    },
+    "Fiber": {
+        "mean": 49.08043480402223,
+        "std": 26.342569738685434,
+        "class": "Fluid Intake",
+        "sub_class": "Enteral & Parenteral Intake"
+    },
+    "Fresh Frozen Plasma": {
+        "mean": 288.29540216089396,
+        "std": 73.13797530192822,
+        "class": "Fluid Intake",
+        "sub_class": "Blood Products"
+    },
+    "Furosemide": {
+        "mean": 18.81939785735933,
+        "std": 24.55672043496471,
+        "class": "Medications",
+        "sub_class": "Diuretics"
+    },
+    "GCS_eye": {
+        "mean": 3.250544945761367,
+        "std": 1.071130566176797,
+        "class": "Neurological",
+        "sub_class": "Neurological Assessment"
+    },
+    "GCS_motor": {
+        "mean": 5.224337960475175,
+        "std": 1.497349067335789,
+        "class": "Neurological",
+        "sub_class": "Neurological Assessment"
+    },
+    "GCS_verbal": {
+        "mean": 3.113947266067437,
+        "std": 1.8653314196447528,
+        "class": "Neurological",
+        "sub_class": "Neurological Assessment"
+    },
+    "GT Flush": {
+        "mean": 45.607379685535804,
+        "std": 48.34432403553766,
+        "class": "Fluid Intake",
+        "sub_class": "Enteral & Parenteral Intake"
+    },
+    "Gastric": {
+        "mean": 167.1510805373483,
+        "std": 193.77808931915348,
+        "class": "Fluid Output",
+        "sub_class": "Fluid Output"
+    },
+    "Gender": {
+        "mean": 0.0,
+        "std": 1.0,
+        "class": "Demographics & Status",
+        "sub_class": "Patient Demographics"
+    },
+    "Glucose (Blood)": {
+        "mean": 152.41996830849527,
+        "std": 60.61544768063044,
+        "class": "Blood Chemistry",
+        "sub_class": "Comprehensive Metabolic Panel"
+    },
+    "Glucose (Serum)": {
+        "mean": 144.19103027303473,
+        "std": 65.46632467653193,
+        "class": "Blood Chemistry",
+        "sub_class": "Comprehensive Metabolic Panel"
+    },
+    "Glucose (Whole Blood)": {
+        "mean": 143.04048553113552,
+        "std": 51.86770980738183,
+        "class": "Blood Chemistry",
+        "sub_class": "Comprehensive Metabolic Panel"
+    },
+    "HR": {
+        "mean": 86.31944923640265,
+        "std": 18.646600796781673,
+        "class": "Vital Signs",
+        "sub_class": "Vital Signs"
+    },
+    "Half Normal Saline": {
+        "mean": 82.74663190415022,
+        "std": 97.9168661013662,
+        "class": "Fluid Intake",
+        "sub_class": "Intravenous Crystalloids"
+    },
+    "Hct": {
+        "mean": 29.41670789716729,
+        "std": 5.686125940150293,
+        "class": "Hematology & Coagulation",
+        "sub_class": "Complete Blood Count"
+    },
+    "Height": {
+        "mean": 169.89313481675393,
+        "std": 12.429917925018325,
+        "class": "Vital Signs",
+        "sub_class": "Anthropometry"
+    },
+    "Heparin": {
+        "mean": 996.0497326142188,
+        "std": 737.1547383375772,
+        "class": "Medications",
+        "sub_class": "Anticoagulants"
+    },
+    "Hgb": {
+        "mean": 9.663200642544131,
+        "std": 1.9626270549104965,
+        "class": "Hematology & Coagulation",
+        "sub_class": "Complete Blood Count"
+    },
+    "Hydralazine": {
+        "mean": 11.987533046966938,
+        "std": 4.638624245514013,
+        "class": "Medications",
+        "sub_class": "Antihypertensives & Vasodilators"
+    },
+    "Hydromorphone": {
+        "mean": 1.763098047432818,
+        "std": 2.688598804714549,
+        "class": "Medications",
+        "sub_class": "Analgesics & Sedatives"
+    },
+    "INR": {
+        "mean": 1.5587388857546498,
+        "std": 0.8381063003880889,
+        "class": "Hematology & Coagulation",
+        "sub_class": "Coagulation Profile"
+    },
+    "Insulin Humalog": {
+        "mean": 4.953022339436155,
+        "std": 4.86186269931543,
+        "class": "Medications",
+        "sub_class": "Antidiabetic Agents"
+    },
+    "Insulin NPH": {
+        "mean": 17.424669450243563,
+        "std": 12.884492953516299,
+        "class": "Medications",
+        "sub_class": "Antidiabetic Agents"
+    },
+    "Insulin Regular": {
+        "mean": 3.7793528097921474,
+        "std": 4.053965652939634,
+        "class": "Medications",
+        "sub_class": "Antidiabetic Agents"
+    },
+    "Insulin largine": {
+        "mean": 21.695418933211368,
+        "std": 15.039499013047541,
+        "class": "Medications",
+        "sub_class": "Antidiabetic Agents"
+    },
+    "Intubated": {
+        "mean": 0.0,
+        "std": 1.0,
+        "class": "Demographics & Status",
+        "sub_class": "Clinical Interventions"
+    },
+    "Jackson-Pratt": {
+        "mean": 54.83674995140478,
+        "std": 91.2583223820654,
+        "class": "Fluid Output",
+        "sub_class": "Fluid Output"
+    },
+    "KCl": {
+        "mean": 7.0062103930768975,
+        "std": 8.155423769347715,
+        "class": "Medications",
+        "sub_class": "Electrolyte Supplements"
+    },
+    "KCl (Bolus)": {
+        "mean": 53.12709700417388,
+        "std": 17.603618437325917,
+        "class": "Medications",
+        "sub_class": "Electrolyte Supplements"
+    },
+    "LDH": {
+        "mean": 633.405649060643,
+        "std": 1275.781400635277,
+        "class": "Blood Chemistry",
+        "sub_class": "Cardiac & Tissue Enzymes"
+    },
+    "Lactate": {
+        "mean": 2.5407221824668387,
+        "std": 2.3978165384681676,
+        "class": "Blood Gas & Respiratory",
+        "sub_class": "Blood Gas Analysis"
+    },
+    "Lactated Ringers": {
+        "mean": 151.63308876026417,
+        "std": 240.73155452072547,
+        "class": "Fluid Intake",
+        "sub_class": "Intravenous Crystalloids"
+    },
+    "Lorazepam": {
+        "mean": 1.1207617416721505,
+        "std": 0.9473545918254002,
+        "class": "Medications",
+        "sub_class": "Analgesics & Sedatives"
+    },
+    "Lymphocytes": {
+        "mean": 12.844905277070685,
+        "std": 12.756802549303139,
+        "class": "Hematology & Coagulation",
+        "sub_class": "Complete Blood Count"
+    },
+    "Lymphocytes (Absolute)": {
+        "mean": 1.787596718480138,
+        "std": 8.541883492989877,
+        "class": "Hematology & Coagulation",
+        "sub_class": "Complete Blood Count"
+    },
+    "MBP": {
+        "mean": 79.1587495520325,
+        "std": 16.77929061180025,
+        "class": "Vital Signs",
+        "sub_class": "Vital Signs"
+    },
+    "MCH": {
+        "mean": 29.970887431076722,
+        "std": 2.476437886493226,
+        "class": "Hematology & Coagulation",
+        "sub_class": "Complete Blood Count"
+    },
+    "MCHC": {
+        "mean": 32.697198572123966,
+        "std": 1.7087465636931127,
+        "class": "Hematology & Coagulation",
+        "sub_class": "Complete Blood Count"
+    },
+    "MCV": {
+        "mean": 91.77014070092993,
+        "std": 6.901698693437278,
+        "class": "Hematology & Coagulation",
+        "sub_class": "Complete Blood Count"
+    },
+    "Magnesium": {
+        "mean": 2.128271732797599,
+        "std": 0.40592933156314803,
+        "class": "Blood Chemistry",
+        "sub_class": "Comprehensive Metabolic Panel"
+    },
+    "Magnesium Sulfate (Bolus)": {
+        "mean": 49.89941924450291,
+        "std": 5.607125035070031,
+        "class": "Medications",
+        "sub_class": "Electrolyte Supplements"
+    },
+    "Magnesium Sulphate": {
+        "mean": 2.0027706428989633,
+        "std": 1.2510338267999515,
+        "class": "Medications",
+        "sub_class": "Electrolyte Supplements"
+    },
+    "Metoprolol": {
+        "mean": 5.636326146269345,
+        "std": 3.52258897852378,
+        "class": "Medications",
+        "sub_class": "Antihypertensives & Vasodilators"
+    },
+    "Midazolam": {
+        "mean": 3.82178590902696,
+        "std": 5.504281827334341,
+        "class": "Medications",
+        "sub_class": "Analgesics & Sedatives"
+    },
+    "Milrinone": {
+        "mean": 1.4614883912866408,
+        "std": 0.8859564580264834,
+        "class": "Medications",
+        "sub_class": "Vasoactive Agents"
+    },
+    "Monocytes": {
+        "mean": 6.052968355516337,
+        "std": 4.9972414086716315,
+        "class": "Hematology & Coagulation",
+        "sub_class": "Complete Blood Count"
+    },
+    "Neosynephrine": {
+        "mean": 4.589565322331855,
+        "std": 5.924628716949917,
+        "class": "Medications",
+        "sub_class": "Vasoactive Agents"
+    },
+    "Neutrophils": {
+        "mean": 76.10942126679086,
+        "std": 16.56324590034045,
+        "class": "Hematology & Coagulation",
+        "sub_class": "Complete Blood Count"
+    },
+    "Nitroglycerine": {
+        "mean": 4.1106521858633345,
+        "std": 5.054364953099491,
+        "class": "Medications",
+        "sub_class": "Antihypertensives & Vasodilators"
+    },
+    "Nitroprusside": {
+        "mean": 4.550661184097875,
+        "std": 4.703112758332289,
+        "class": "Medications",
+        "sub_class": "Antihypertensives & Vasodilators"
+    },
+    "Norepinephrine": {
+        "mean": 0.5022816383916494,
+        "std": 0.6116611855372024,
+        "class": "Medications",
+        "sub_class": "Vasoactive Agents"
+    },
+    "Normal Saline": {
+        "mean": 26.555457559779036,
+        "std": 75.13157334201117,
+        "class": "Fluid Intake",
+        "sub_class": "Intravenous Crystalloids"
+    },
+    "O2 Saturation": {
+        "mean": 96.4140563278574,
+        "std": 4.659181717653238,
+        "class": "Vital Signs",
+        "sub_class": "Vital Signs"
+    },
+    "OR/PACU Crystalloid": {
+        "mean": 2209.909724343311,
+        "std": 1513.5654751860495,
+        "class": "Fluid Intake",
+        "sub_class": "Intravenous Crystalloids"
+    },
+    "PCO2": {
+        "mean": 42.90716835331295,
+        "std": 11.594589495228108,
+        "class": "Blood Gas & Respiratory",
+        "sub_class": "Blood Gas Analysis"
+    },
+    "PO intake": {
+        "mean": 186.86056810681123,
+        "std": 134.03052995123136,
+        "class": "Fluid Intake",
+        "sub_class": "Enteral & Parenteral Intake"
+    },
+    "PO2": {
+        "mean": 121.56505864070306,
+        "std": 82.31576817815055,
+        "class": "Blood Gas & Respiratory",
+        "sub_class": "Blood Gas Analysis"
+    },
+    "PT": {
+        "mean": 16.975200682380688,
+        "std": 8.855824223408513,
+        "class": "Hematology & Coagulation",
+        "sub_class": "Coagulation Profile"
+    },
+    "PTT": {
+        "mean": 45.27300905837826,
+        "std": 25.605058913039123,
+        "class": "Hematology & Coagulation",
+        "sub_class": "Coagulation Profile"
+    },
+    "Packed RBC": {
+        "mean": 237.32847526154546,
+        "std": 361.7652951403507,
+        "class": "Fluid Intake",
+        "sub_class": "Blood Products"
+    },
+    "Pantoprazole": {
+        "mean": 0.9985373531231088,
+        "std": 0.03022141625480057,
+        "class": "Medications",
+        "sub_class": "Gastrointestinal Agents"
+    },
+    "Phosphate": {
+        "mean": 3.6578508145959567,
+        "std": 1.4757180318122476,
+        "class": "Blood Chemistry",
+        "sub_class": "Comprehensive Metabolic Panel"
+    },
+    "Piggyback": {
+        "mean": 74.32600008026003,
+        "std": 50.291200984352734,
+        "class": "Fluid Intake",
+        "sub_class": "Intravenous Crystalloids"
+    },
+    "Piperacillin": {
+        "mean": 0.0,
+        "std": 1.0,
+        "class": "Medications",
+        "sub_class": "Antibacterials"
+    },
+    "Platelet Count": {
+        "mean": 197.04880883016264,
+        "std": 127.51132682204643,
+        "class": "Hematology & Coagulation",
+        "sub_class": "Complete Blood Count"
+    },
+    "Potassium": {
+        "mean": 4.1488844567308645,
+        "std": 0.6528441202770802,
+        "class": "Blood Chemistry",
+        "sub_class": "Comprehensive Metabolic Panel"
+    },
+    "Pre-admission Output": {
+        "mean": 590.9830481371231,
+        "std": 759.7406321807712,
+        "class": "Fluid Output",
+        "sub_class": "Fluid Output"
+    },
+    "Propofol": {
+        "mean": 129.3135940024839,
+        "std": 107.07545854978085,
+        "class": "Medications",
+        "sub_class": "Analgesics & Sedatives"
+    },
+    "RBC": {
+        "mean": 3.241800523597025,
+        "std": 0.6851174367742761,
+        "class": "Hematology & Coagulation",
+        "sub_class": "Complete Blood Count"
+    },
+    "RDW": {
+        "mean": 16.010633653202703,
+        "std": 2.7666185778734516,
+        "class": "Hematology & Coagulation",
+        "sub_class": "Complete Blood Count"
+    },
+    "RR": {
+        "mean": 19.827537932482482,
+        "std": 6.2878114251575745,
+        "class": "Vital Signs",
+        "sub_class": "Vital Signs"
+    },
+    "Residual": {
+        "mean": 58.4415250861844,
+        "std": 100.72770952400441,
+        "class": "Fluid Output",
+        "sub_class": "Fluid Output"
+    },
+    "SBP": {
+        "mean": 119.36846216630603,
+        "std": 22.523989297787082,
+        "class": "Vital Signs",
+        "sub_class": "Vital Signs"
+    },
+    "SG Urine": {
+        "mean": 1.018946709932091,
+        "std": 0.009530415558549795,
+        "class": "Urine Analysis",
+        "sub_class": "Urinalysis"
+    },
+    "Sodium": {
+        "mean": 138.65420797558835,
+        "std": 6.376691875308749,
+        "class": "Blood Chemistry",
+        "sub_class": "Comprehensive Metabolic Panel"
+    },
+    "Solution": {
+        "mean": 11.230425769229958,
+        "std": 18.786734733033747,
+        "class": "Fluid Intake",
+        "sub_class": "Intravenous Crystalloids"
+    },
+    "Sterile Water": {
+        "mean": 21.908426422734696,
+        "std": 16.418848625779027,
+        "class": "Fluid Intake",
+        "sub_class": "Intravenous Crystalloids"
+    },
+    "Stool": {
+        "mean": 443.869678814361,
+        "std": 504.33235134989076,
+        "class": "Fluid Output",
+        "sub_class": "Fluid Output"
+    },
+    "TPN": {
+        "mean": 67.32948892937763,
+        "std": 24.57737314869813,
+        "class": "Fluid Intake",
+        "sub_class": "Enteral & Parenteral Intake"
+    },
+    "Temperature": {
+        "mean": 36.96964405811739,
+        "std": 0.6953289276867765,
+        "class": "Vital Signs",
+        "sub_class": "Vital Signs"
+    },
+    "Total CO2": {
+        "mean": 25.55867349876216,
+        "std": 6.244737414659935,
+        "class": "Blood Gas & Respiratory",
+        "sub_class": "Blood Gas Analysis"
+    },
+    "Ultrafiltrate": {
+        "mean": 58.783309755662074,
+        "std": 102.7802117359487,
+        "class": "Fluid Output",
+        "sub_class": "Fluid Output"
+    },
+    "Urine": {
+        "mean": 142.3170944275793,
+        "std": 153.38405158552928,
+        "class": "Fluid Output",
+        "sub_class": "Fluid Output"
+    },
+    "Vacomycin": {
+        "mean": 1.0033403082156889,
+        "std": 0.07605214754196672,
+        "class": "Medications",
+        "sub_class": "Antibacterials"
+    },
+    "Vasopressin": {
+        "mean": 2.145458313281585,
+        "std": 0.953609688501078,
+        "class": "Medications",
+        "sub_class": "Vasoactive Agents"
+    },
+    "WBC": {
+        "mean": 12.702234112447456,
+        "std": 9.390773839468926,
+        "class": "Hematology & Coagulation",
+        "sub_class": "Complete Blood Count"
+    },
+    "Weight": {
+        "mean": 84.94594251232743,
+        "std": 26.116677197797202,
+        "class": "Vital Signs",
+        "sub_class": "Anthropometry"
+    },
+    "pH Blood": {
+        "mean": 7.374457715630751,
+        "std": 0.08683930579060718,
+        "class": "Blood Gas & Respiratory",
+        "sub_class": "Blood Gas Analysis"
+    },
+    "pH Urine": {
+        "mean": 6.00635730611811,
+        "std": 0.7838164102286804,
+        "class": "Urine Analysis",
+        "sub_class": "Urinalysis"
+    }
+}

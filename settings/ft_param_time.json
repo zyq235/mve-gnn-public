@@ -1,0 +1,8 @@
+{
+	"aggr_type": "combine",
+	"num_clusters_k": 10,
+	"ts_heads": 8,
+	"num_layers":2,
+	"num_hidden":256,
+	"pool_mode": "time"
+}
