@@ -18,17 +18,19 @@ Obtain dataset access through PhysioNet for [MIMIC-III](https://physionet.org/co
 
 Place the preprocessed cohort pickle and its `var2ind.json` and `var_mean_std.json` in the matching dataset directory. The `preprocess/` directory contains the data preparation code.
 
-| Dataset | Cohort pickle | Encoder checkpoint to use |
-| --- | --- | --- |
-| MIMIC-III | `data/mimic3/mimic_iii.pkl` | `checkpoints/mm3_pretrained.pt` |
-| MIMIC-IV | `data/mimic-iv/mimic_iv.pkl` | `checkpoints/mm4_pretrained.pt` |
-| eICU | `data/eicu/eicu.pkl` | `checkpoints/mm4_pretrained.pt` |
+The pretrained encoders used in our experiments are provided as Release assets. They correspond to MIMIC-III trial 5 and MIMIC-IV trial 17. Download the files using the links below and save them under `checkpoints/`.
+
+| Dataset | Cohort pickle | Encoder checkpoint to use | Download |
+| --- | --- | --- | --- |
+| MIMIC-III | `data/mimic3/mimic_iii.pkl` | `checkpoints/mm3_pretrained.pt` | [mm3_pretrained.pt](https://github.com/zyq235/mve-gnn-public/releases/download/pretrained-v1/mm3_pretrained.pt) |
+| MIMIC-IV | `data/mimic-iv/mimic_iv.pkl` | `checkpoints/mm4_pretrained.pt` | [mm4_pretrained.pt](https://github.com/zyq235/mve-gnn-public/releases/download/pretrained-v1/mm4_pretrained.pt) |
+| eICU | `data/eicu/eicu.pkl` | `checkpoints/mm4_pretrained.pt` | Shared with MIMIC-IV |
 
 eICU reuses the MIMIC-IV encoder weights. When running the downstream commands with `--dataset eicu`, pass `--pretrained-checkpoint checkpoints/mm4_pretrained.pt` to load the shared file directly.
 
 Each pickle contains `(events, outcomes, train_ids, val_ids, test_ids)`. The events table needs `ts_id`, `variable`, `minute`, and `value`, including `Age` and `Gender` rows. The outcomes table needs `ts_id` and `in_hospital_mortality`. The MIMIC baseline loader additionally uses a patient identifier such as `SUBJECT_ID`. Map measurement names to contiguous integer IDs in `var2ind.json`. Include `mean`, `std`, and `class` for the measurements and demographics in `var_mean_std.json`. Use patient-disjoint development and test sets and compute normalization statistics on the training partition. The graph loaders build missing caches under `processed/`.
 
-Step 1 produces the MIMIC-III checkpoint. If you already have the compatible checkpoint for your dataset, place it at the path above and start at step 2.
+After preparing the cohort files and downloading the checkpoints, start at step 2. Step 1 describes encoder pretraining.
 
 ## 1. Pretrain the MIMIC-III encoder
 
