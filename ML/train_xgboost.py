@@ -4,8 +4,13 @@ import pickle
 import xgboost as xgb
 from tqdm import tqdm
 from torch.utils.data import DataLoader
-from sklearn.metrics import roc_auc_score, accuracy_score, precision_recall_fscore_support, average_precision_score, \
-    precision_recall_curve
+from sklearn.metrics import (
+    roc_auc_score,
+    accuracy_score,
+    precision_recall_fscore_support,
+    precision_recall_curve,
+)
+from evaluator import trapezoidal_pr_auc
 from evaluator import get_precision_at_target_recall
 from dataset.mimic3_MSTD_dataset import MIMIC3Dataset
 from split_protocol import (
@@ -58,7 +63,7 @@ def extract_numpy_data(dataset, batch_size=256):
 def calculate_metrics(y_true, y_probs, y_preds):
     try:
         auc = roc_auc_score(y_true, y_probs)
-        prauc = average_precision_score(y_true, y_probs)
+        prauc = trapezoidal_pr_auc(y_true, y_probs)
         precision, recall, f1, _ = precision_recall_fscore_support(y_true, y_preds, average='binary', zero_division=0)
         p_val1, thresh1 = get_precision_at_target_recall(y_true, y_probs, target_recall=0.8)
         p_val2, thresh2 = get_precision_at_target_recall(y_true, y_probs, target_recall=0.9)

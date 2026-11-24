@@ -4,7 +4,12 @@ import numpy as np
 import torch
 import xgboost as xgb
 from torch.utils.data import DataLoader
-from sklearn.metrics import roc_auc_score, accuracy_score, precision_recall_fscore_support, average_precision_score
+from sklearn.metrics import (
+    roc_auc_score,
+    accuracy_score,
+    precision_recall_fscore_support,
+)
+from evaluator import trapezoidal_pr_auc
 from tqdm import tqdm
 
 from dataset.mimic3_MSTD_dataset import MIMIC3Dataset
@@ -72,7 +77,7 @@ def get_t2g_embeddings(model, X):
 def calculate_metrics(y_true, y_probs, y_preds):
     try:
         auc = roc_auc_score(y_true, y_probs)
-        prauc = average_precision_score(y_true, y_probs)
+        prauc = trapezoidal_pr_auc(y_true, y_probs)
         precision, recall, f1, _ = precision_recall_fscore_support(y_true, y_preds, average='binary', zero_division=0)
         p_val1, _ = get_precision_at_target_recall(y_true, y_probs, target_recall=0.8)
         p_val2, _ = get_precision_at_target_recall(y_true, y_probs, target_recall=0.9)

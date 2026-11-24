@@ -3,7 +3,15 @@ import torch.nn as nn
 import numpy as np
 from tqdm import tqdm
 from torch_geometric.loader import DataLoader
-from sklearn.metrics import roc_auc_score, f1_score, precision_score, recall_score, confusion_matrix, average_precision_score, precision_recall_curve, fbeta_score
+from sklearn.metrics import (
+    roc_auc_score,
+    f1_score,
+    precision_score,
+    recall_score,
+    confusion_matrix,
+    precision_recall_curve,
+    fbeta_score,
+)
 from sklearn.metrics import auc
 from models.graphmae.finetune_graph_model import HierarchicalEHRModel
 from dataset.mimic3_patient_dataset import ICULargeGraphDataset
@@ -81,7 +89,6 @@ def eval_metrics(y_true, y_prob,y_pred):
     pr_auc = auc(recall, precision)
     roc_auc = roc_auc_score(y_true, y_prob)
     minrp = np.minimum(precision, recall).max()
-    # pr_auc = average_precision_score(y_true, final_probs)
     f1 = f1_score(y_true, y_pred)
     prec = precision_score(y_true, y_pred)
     rec = recall_score(y_true, y_pred)
@@ -172,7 +179,6 @@ def evaluate_ensemble(models_dict, test_loader, device, ensemble_mode="soft", co
     pr_auc = auc(recall, precision)
     roc_auc = roc_auc_score(y_true, final_probs)
     minrp = np.minimum(precision, recall).max()
-    # pr_auc = average_precision_score(y_true, final_probs)
     f1 = f1_score(y_true, final_preds)
     prec = precision_score(y_true, final_preds)
     rec = recall_score(y_true, final_preds)

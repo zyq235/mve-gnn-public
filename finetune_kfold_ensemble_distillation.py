@@ -40,11 +40,9 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 from sklearn.metrics import (
-    auc as sklearn_auc,
-    average_precision_score,
-    precision_recall_curve,
     roc_auc_score,
 )
+from evaluator import trapezoidal_pr_auc
 from torch import nn
 from torch_geometric.loader import DataLoader
 from tqdm import tqdm
@@ -175,21 +173,16 @@ def classification_metrics(
     probabilities = 1.0 / (1.0 + np.exp(-np.clip(logits, -80.0, 80.0)))
     try:
         auc = float(roc_auc_score(labels, probabilities))
-        prauc = float(average_precision_score(labels, probabilities))
-        precision, recall, _ = precision_recall_curve(labels, probabilities)
-        prauc_trapezoid = float(sklearn_auc(recall, precision))
+        prauc = float(trapezoidal_pr_auc(labels, probabilities))
+        prauc_trapezoid = prauc
     except ValueError:
         auc = 0.5
         prauc = 0.0
         prauc_trapezoid = 0.0
     return {
         "auc": auc,
-        # This is the definition used by finetune_kfold.py and by the
-        # validation selection objective.
+        # Training, checkpoint selection, and evaluation share this definition.
         "prauc": prauc,
-        # ensemble_kfold_avg.py historically printed trapezoidal PR-AUC.
-        # Keeping it as an additional field makes old reports reproducible
-        # without changing checkpoint selection.
         "prauc_trapezoid": prauc_trapezoid,
         "objective": auc + prauc,
     }

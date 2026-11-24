@@ -27,7 +27,6 @@ import numpy as np
 import torch
 from sklearn.metrics import (
     auc as sklearn_auc,
-    average_precision_score,
     confusion_matrix,
     f1_score,
     precision_recall_curve,
@@ -144,10 +143,8 @@ def evaluation_metrics(
     )
     if np.unique(labels).size < 2:
         roc_auc = 0.5
-        average_precision = float(labels.mean())
     else:
         roc_auc = float(roc_auc_score(labels, probabilities))
-        average_precision = float(average_precision_score(labels, probabilities))
     pr_auc = float(sklearn_auc(recall_curve, precision_curve))
     min_rp = float(np.minimum(precision_curve, recall_curve).max())
     p_at_r08, threshold_r08 = precision_at_recall(
@@ -162,11 +159,8 @@ def evaluation_metrics(
     )
     return {
         "auc": roc_auc,
-        # Keep the exact trapezoidal definition printed by
-        # ensemble_kfold_avg.py.
         "prauc": pr_auc,
-        # Also expose the definition used by finetune_kfold.py.
-        "average_precision": average_precision,
+        "prauc_trapezoid": pr_auc,
         "f1": float(f1_score(labels, predictions, zero_division=0)),
         "precision": float(
             precision_score(labels, predictions, zero_division=0)
@@ -609,12 +603,11 @@ def run(args: argparse.Namespace) -> None:
                 "num_clusters": num_clusters,
             }
             LOGGER.info(
-                "fold=%d view=%s AUC/PRAUC=%.4f/%.4f AP=%.4f checkpoint=%s",
+                "fold=%d view=%s AUC/PRAUC=%.4f/%.4f checkpoint=%s",
                 fold_number,
                 view,
                 metrics["auc"],
                 metrics["prauc"],
-                metrics["average_precision"],
                 checkpoint_path,
             )
 
@@ -637,12 +630,11 @@ def run(args: argparse.Namespace) -> None:
             view_predictions,
         )
         LOGGER.info(
-            "fold=%d ensemble AUC/PRAUC=%.4f/%.4f AP=%.4f "
+            "fold=%d ensemble AUC/PRAUC=%.4f/%.4f "
             "P@R0.8=%.4f P@R0.9=%.4f minRP=%.4f",
             fold_number,
             ensemble_metrics["auc"],
             ensemble_metrics["prauc"],
-            ensemble_metrics["average_precision"],
             ensemble_metrics["p_at_recall_0.8"],
             ensemble_metrics["p_at_recall_0.9"],
             ensemble_metrics["min_rp"],
@@ -700,7 +692,6 @@ def run(args: argparse.Namespace) -> None:
         for metric_name in (
             "auc",
             "prauc",
-            "average_precision",
             "p_at_recall_0.8",
             "p_at_recall_0.9",
             "min_rp",

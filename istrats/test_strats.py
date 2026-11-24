@@ -11,8 +11,13 @@ from types import SimpleNamespace
 import torch
 import numpy as np
 from torch.utils.data import DataLoader
-from sklearn.metrics import roc_auc_score, accuracy_score, precision_recall_fscore_support, average_precision_score, \
-    precision_recall_curve
+from sklearn.metrics import (
+    roc_auc_score,
+    accuracy_score,
+    precision_recall_fscore_support,
+    precision_recall_curve,
+)
+from evaluator import trapezoidal_pr_auc
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
@@ -61,7 +66,7 @@ def calculate_metrics(y_true, y_probs, y_preds):
     auc = roc_auc_score(y_true, y_probs)
     acc = accuracy_score(y_true, y_preds)
     precision, recall, f1, _ = precision_recall_fscore_support(y_true, y_preds, average='binary', zero_division=0)
-    prauc = average_precision_score(y_true, y_probs)
+    prauc = trapezoidal_pr_auc(y_true, y_probs)
     pr, re, _ = precision_recall_curve(y_true, y_probs)
     minrp = np.minimum(pr, re).max()
 

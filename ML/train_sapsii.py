@@ -18,7 +18,6 @@ import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
     accuracy_score,
-    average_precision_score,
     precision_recall_curve,
     precision_recall_fscore_support,
     roc_auc_score,
@@ -31,6 +30,8 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 DEFAULT_RESULTS_DIR = PROJECT_ROOT / "results"
+
+from evaluator import trapezoidal_pr_auc
 
 from split_protocol import (  # noqa: E402
     assert_split_integrity,
@@ -122,7 +123,7 @@ def calculate_metrics(
     precision, recall, f1, _ = precision_recall_fscore_support(
         y_true, y_preds, average="binary", zero_division=0
     )
-    prauc = average_precision_score(y_true, y_probs)
+    prauc = trapezoidal_pr_auc(y_true, y_probs)
     pr_values, recall_values, _ = precision_recall_curve(y_true, y_probs)
     minrp = np.minimum(pr_values, recall_values).max()
     precision_at_08, _ = get_precision_at_target_recall(y_true, y_probs, 0.8)

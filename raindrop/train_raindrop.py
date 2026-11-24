@@ -6,7 +6,10 @@ import numpy as np
 import os
 import pickle
 from tqdm import tqdm
-from sklearn.metrics import roc_auc_score, average_precision_score
+from sklearn.metrics import (
+    roc_auc_score,
+)
+from evaluator import trapezoidal_pr_auc
 
 from dataset.mimic_raindrop_dataset import MIMIC3Dataset
 from models.Raindrop.models_rd import Raindrop_v2
@@ -94,7 +97,7 @@ def evaluate(model, loader, criterion, device):
 
     try:
         val_auc = roc_auc_score(all_labels, all_probs)
-        val_auprc = average_precision_score(all_labels, all_probs)
+        val_auprc = trapezoidal_pr_auc(all_labels, all_probs)
     except ValueError:
         val_auc = 0.5
         val_auprc = 0.0

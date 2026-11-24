@@ -12,7 +12,11 @@ from typing import Mapping
 
 import numpy as np
 import pandas as pd
-from sklearn.metrics import average_precision_score, precision_recall_curve, roc_auc_score
+from sklearn.metrics import (
+    precision_recall_curve,
+    roc_auc_score,
+)
+from evaluator import PRAUC_DEFINITION, trapezoidal_pr_auc
 
 
 METRICS = ("auc", "prauc", "pr09")
@@ -20,7 +24,7 @@ PREDICTION_COLUMNS = ("dataset", "model", "split_digest", "stay_id", "patient_id
 
 
 def metric_values(labels: np.ndarray, probabilities: np.ndarray) -> dict[str, float]:
-    """Match the project's AUROC, average precision and precision@recall 0.9."""
+    """Compute AUROC, trapezoidal PR-AUC and precision@recall 0.9."""
     labels = np.asarray(labels, dtype=np.int64).reshape(-1)
     probabilities = np.asarray(probabilities, dtype=np.float64).reshape(-1)
     if labels.size != probabilities.size or labels.size == 0:
@@ -31,7 +35,7 @@ def metric_values(labels: np.ndarray, probabilities: np.ndarray) -> dict[str, fl
     qualifying = np.flatnonzero(recall >= 0.9)
     return {
         "auc": float(roc_auc_score(labels, probabilities)),
-        "prauc": float(average_precision_score(labels, probabilities)),
+        "prauc": float(trapezoidal_pr_auc(labels, probabilities)),
         "pr09": float(precision[qualifying[-1]]) if qualifying.size else 0.0,
     }
 
@@ -128,6 +132,7 @@ def bootstrap_predictions(
         "bootstrap_seed": int(seed),
         "discarded_one_class_draws": int(discarded),
         "bootstrap_unit": "patient (all ICU stays retained)",
+        "prauc_definition": PRAUC_DEFINITION,
         "ci_method": "2.5/97.5 percentile of paired patient-cluster draws",
         "p_method": "two-sided null-centered paired bootstrap, Monte Carlo +1 correction",
         "reference_model": reference_model,

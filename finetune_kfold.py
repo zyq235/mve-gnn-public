@@ -17,12 +17,12 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 from sklearn.metrics import (
-    average_precision_score,
     f1_score,
     precision_score,
     recall_score,
     roc_auc_score,
 )
+from evaluator import trapezoidal_pr_auc
 from torch import nn
 from torch.utils.tensorboard import SummaryWriter
 from torch_geometric.loader import DataLoader
@@ -275,7 +275,7 @@ def validate(model, step, val_dataloader, device, writer, args):
 
     try:
         auc = roc_auc_score(all_labels.numpy(), all_probs.numpy())
-        pr_auc = average_precision_score(all_labels.numpy(), all_probs.numpy())
+        pr_auc = trapezoidal_pr_auc(all_labels.numpy(), all_probs.numpy())
         precision = precision_score(all_labels.numpy(), all_preds.numpy(), zero_division=0)
         recall = recall_score(all_labels.numpy(), all_preds.numpy(), zero_division=0)
         min_rp = min(precision, recall)

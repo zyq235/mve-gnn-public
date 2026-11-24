@@ -8,11 +8,11 @@ import numpy as np
 import torch
 from sklearn.metrics import (
     accuracy_score,
-    average_precision_score,
     precision_recall_curve,
     precision_recall_fscore_support,
     roc_auc_score,
 )
+from evaluator import trapezoidal_pr_auc
 
 from evaluator import get_precision_at_target_recall
 from models.modeling_gru import GRU_TS
@@ -67,7 +67,7 @@ def calculate_metrics(y_true, y_probs, threshold=0.5):
         y_true, y_preds, average="binary", zero_division=0
     )
     try:
-        prauc = float(average_precision_score(y_true, y_probs))
+        prauc = float(trapezoidal_pr_auc(y_true, y_probs))
         pr_values, recall_values, _ = precision_recall_curve(y_true, y_probs)
         minrp = float(np.minimum(pr_values, recall_values).max())
     except ValueError:

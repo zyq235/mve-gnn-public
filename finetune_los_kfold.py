@@ -680,6 +680,8 @@ def _make_dataset(ids, target_frame, paths, landmark_hours):
         time_limit=landmark_hours,
         pkl_path=os.fspath(paths["pkl_path"]),
         target_frame=target_frame,
+        filter_before_windowing=True,
+        window_start_minute=0,
     )
 
 

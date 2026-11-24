@@ -2,6 +2,8 @@
 
 MVE-GNN learns a graph encoder from irregular EHR measurements and fine-tunes it for in-hospital mortality prediction. The downstream model combines semantic, temporal, and structural views.
 
+Mortality PRAUC/AUPRC is computed with trapezoidal integration of the precision-recall curve in training, validation, testing, and patient bootstrap. Checkpoint selection uses validation AUROC plus trapezoidal PR-AUC.
+
 ## Setup
 
 Run the commands from the repository root. Use Python 3.10, PyTorch 2.6, and PyTorch Geometric 2.6.1. Install `torch-cluster`, `torch-scatter`, and `torch-sparse` builds that match your PyTorch and CPU/CUDA environment. Install the remaining dependencies with:

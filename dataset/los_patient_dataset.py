@@ -338,7 +338,7 @@ def load_los_label_frame(
 
 
 class LOSLargeGraphDataset(ICULargeGraphDataset):
-    """Attach LOS targets to the unchanged cached mortality-task graphs."""
+    """Attach remaining-LOS targets to patient graphs."""
 
     def __init__(self, *args, target_frame: pd.DataFrame, **kwargs):
         required = {
@@ -393,9 +393,7 @@ class LOSLargeGraphDataset(ICULargeGraphDataset):
         data = super().get(idx)
         stay_id = int(data.ts_id)
 
-        # MIMIC pickles can contain pre-ICU events.  The LOS task is explicitly
-        # based on ICU time [0, landmark), so remove them without changing the
-        # original mortality dataset implementation.
+        # Enforce the LOS lower bound when reading cached graphs.
         nonnegative = data.x_time.view(-1) >= 0
         if not bool(nonnegative.all()):
             for key in ("x_var", "x_val", "x_time", "x_raw", "batch_time", "batch_type"):

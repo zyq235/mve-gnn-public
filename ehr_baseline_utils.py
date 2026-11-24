@@ -12,11 +12,11 @@ import pandas as pd
 import torch
 from sklearn.metrics import (
     accuracy_score,
-    average_precision_score,
     precision_recall_curve,
     precision_recall_fscore_support,
     roc_auc_score,
 )
+from evaluator import trapezoidal_pr_auc
 from torch import Tensor
 from torch.utils.data import WeightedRandomSampler
 
@@ -58,7 +58,7 @@ def binary_metrics(labels: Iterable[float], probabilities: Iterable[float]) -> d
         else 0.5
     )
     prauc = (
-        float(average_precision_score(labels_array, probability_array))
+        float(trapezoidal_pr_auc(labels_array, probability_array))
         if np.any(labels_array == 1)
         else 0.0
     )

@@ -12,7 +12,10 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import torch
-from sklearn.metrics import average_precision_score, roc_auc_score
+from sklearn.metrics import (
+    roc_auc_score,
+)
+from evaluator import trapezoidal_pr_auc
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from torch.utils.data import DataLoader
@@ -166,7 +169,7 @@ def _prediction(ids, labels, probabilities):
 def _auc_prauc_loss(labels, probabilities):
     """XGBoost minimizes callable metrics, so negate validation AUROC+AUPRC."""
     return -(roc_auc_score(labels, probabilities) +
-             average_precision_score(labels, probabilities))
+             trapezoidal_pr_auc(labels, probabilities))
 
 
 def _boosted_head(config, seed, imbalance):

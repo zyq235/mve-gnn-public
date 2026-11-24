@@ -68,7 +68,7 @@ class ICUGraphData(Data):
 class ICULargeGraphDataset(Dataset):
     def __init__(self, root, ts_id, var2ind_path, var_mean_std_path, max_nodes=2000, transform=None,
                  pre_transform=None, time_limit=None, stage="train", pkl_path=None, time_slot=60,
-                 *, filter_before_windowing=False):
+                 *, filter_before_windowing=False, window_start_minute=None):
 
         self.tsid_list = [int(value) for value in ts_id]
         self.tsid_set = set(self.tsid_list)
@@ -78,6 +78,9 @@ class ICULargeGraphDataset(Dataset):
         self.window_cutoff_minutes = (
             time_limit * 60 if filter_before_windowing and time_limit is not None else None
         )
+        if window_start_minute is not None and self.window_cutoff_minutes is None:
+            raise ValueError("window_start_minute requires a pre-windowing cutoff")
+        self.window_start_minute = window_start_minute
         self.stage = stage
         self.pkl_path = self._resolve_pkl_path(root, pkl_path)
         self.events = None
@@ -205,8 +208,10 @@ class ICULargeGraphDataset(Dataset):
     def processed_dir(self):
         if self.window_cutoff_minutes is None:
             return super().processed_dir
+        start = "" if self.window_start_minute is None else f"ge_{self.window_start_minute}_"
         return os.path.join(
-            self.root, f"processed_lt_{self.window_cutoff_minutes}_slot_{self.time_slot}_v1"
+            self.root,
+            f"processed_{start}lt_{self.window_cutoff_minutes}_slot_{self.time_slot}_v1",
         )
 
     @property
@@ -276,6 +281,8 @@ class ICULargeGraphDataset(Dataset):
             events, label_df, _, _, _ = pickle.load(handle)
         stay_ids = set(map(int, stay_ids))
         selected = events["ts_id"].isin(stay_ids)
+        if self.window_start_minute is not None:
+            selected &= events["minute"].ge(self.window_start_minute)
         if self.window_cutoff_minutes is not None:
             selected &= events["minute"].lt(self.window_cutoff_minutes)
         self.events = events.loc[selected].copy()
